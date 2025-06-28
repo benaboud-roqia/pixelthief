@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base du mur -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#4A4A6A" />
+        </shape>
+    </item>
+    <!-- Ombre interne pour donner de la profondeur -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#60000000"
+                android:centerColor="#00000000"
+                android:endColor="#00000000"
+                android:angle="45"/>
+        </shape>
+    </item>
+</layer-list> 

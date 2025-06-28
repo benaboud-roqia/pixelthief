@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_background_gradient"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvGameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-condensed"
+        android:letterSpacing="0.15"
+        android:shadowColor="#E6000000"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="PIXEL THIEF"
+        android:textColor="@android:color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.todolist.pixelthief.GameGridView
+        android:id="@+id/gameGridView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/tvStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGameTitle" />
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#FFD700"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvStatus"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Score: 200" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:background="#20FFFFFF"
+        android:fontFamily="sans-serif-light"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:textColor="#A0C0FF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/dpad_center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Inventaire: Fumigène" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dpad_center_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="90dp" />
+
+    <View
+        android:id="@+id/dpad_center"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintTop_toTopOf="@id/dpad_center_h"
+        app:layout_constraintBottom_toBottomOf="@id/dpad_center_h"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- D-Pad Controls -->
+    <Button
+        android:id="@+id/btnUseItem"
+        style="@style/DpadButton"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:text="USE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toTopOf="@id/dpad_center"
+        app:layout_constraintBottom_toBottomOf="@id/dpad_center"
+        app:layout_constraintStart_toStartOf="@id/dpad_center"
+        app:layout_constraintEnd_toEndOf="@id/dpad_center" />
+
+    <Button
+        android:id="@+id/btnUp"
+        style="@style/DpadButton"
+        android:text="▲"
+        app:layout_constraintBottom_toTopOf="@id/dpad_center"
+        app:layout_constraintEnd_toEndOf="@id/dpad_center"
+        app:layout_constraintStart_toStartOf="@id/dpad_center" />
+
+    <Button
+        android:id="@+id/btnDown"
+        style="@style/DpadButton"
+        android:text="▼"
+        app:layout_constraintEnd_toEndOf="@id/dpad_center"
+        app:layout_constraintStart_toStartOf="@id/dpad_center"
+        app:layout_constraintTop_toBottomOf="@id/dpad_center" />
+
+    <Button
+        android:id="@+id/btnLeft"
+        style="@style/DpadButton"
+        android:text="◄"
+        app:layout_constraintBottom_toBottomOf="@id/dpad_center"
+        app:layout_constraintEnd_toStartOf="@id/dpad_center"
+        app:layout_constraintTop_toTopOf="@id/dpad_center" />
+
+    <Button
+        android:id="@+id/btnRight"
+        style="@style/DpadButton"
+        android:text="►"
+        app:layout_constraintBottom_toBottomOf="@id/dpad_center"
+        app:layout_constraintStart_toEndOf="@id/dpad_center"
+        app:layout_constraintTop_toTopOf="@id/dpad_center" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
